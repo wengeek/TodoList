@@ -1,0 +1,125 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: hsl(0, 0%, 100%);
+  background-color: hsl(0, 0%, 20%);
+  background-image: -webkit-linear-gradient(hsla(0, 0%, 100%, .6), hsla(0, 0%, 100%, 0));
+  background-image: linear-gradient(hsla(0, 0%, 100%, .6), hsla(0, 0%, 100%, 0));
+  border-bottom: 1px solid hsl(0, 0%, 80%);
+  -webkit-box-shadow: 0 3px 5px hsl(0, 0%, 91%);
+  box-shadow: 0 3px 5px hsl(0, 0%, 91%);
+}
+
+.header h2 {
+  margin: 0;
+  padding: 0;
+  padding-left: 10px;
+  height: 50px;
+  line-height: 50px;
+  text-align: left;
+}
+
+.header div {
+  position: absolute;
+  right: 12px;
+  top: 0;
+  height: 50px;
+  line-height: 50px;
+  font-size: 1.5rem;
+}
+
+.menu {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: hsl(0, 0%, 100%);
+  border-top: 1px solid hsl(0, 0%, 80%);
+  -webkit-box-shadow: 0 1px 5px hsl(0, 0%, 20%);
+  box-shadow: 0 1px 5px hsl(0, 0%, 20%);
+}
+
+.menu ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+
+.menu ul li {
+  float: left;
+  width: 33.3%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.menu ul li:last-child:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.menu ul li a {
+  display: block;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  font-size: 1.5rem;
+  color: hsl(0, 0%, 67%);
+  text-decoration: none;
+  -webkit-tap-highlight-color: hsla(0, 0%, 0%, 0);
+}
+
+.menu ul li a.active {
+  color: hsl(161, 69%, 36%);
+}
+
+.wrap {
+  margin-top: 50px;
+}
+
+.addpop {
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: .7;
+  background-color: #888;
+  -webkit-transition: all .4s ease;
+  -o-transition: all .4s ease;
+  transition: all .4s ease;
+  -webkit-transform: translate3d(0, -100%, 0);
+  -ms-transform: translate3d(0, -100%, 0);
+  -o-transform: translate3d(0, -100%, 0);
+  transform: translate3d(0, -100%, 0);
+}
+.show {
+  -webkit-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+.add-input {
+  z-index: 2;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 90%;
+  background-color: #efefef;
+  border-radius: 10px;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.add-input h3 {
+  text-align: center;
+  font-size: 1.3rem;
+  text-shadow: 1px 0 2px #4554BB;
+}

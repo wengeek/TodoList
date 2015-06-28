@@ -1,9 +1,28 @@
 import React from 'react';
 
-export default class Hello extends React.Component {
+class Hello extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {count: props.initialCount};
+  }
+  defaultProps() {
+    return {
+      initialCount: 0
+    }
+  }
+  tick() {
+    this.setState({count: this.state.count + 1});
+  }
   render() {
-    let num = 101;
-
-    return <p>This is the number: {num}</p>;
+    return (
+      <div onClick={this.tick.bind(this)} className="one two">
+        Clicks: {this.state.count}
+      </div>
+    );
   }
 }
+
+Hello.propTypes = { initialCount: React.PropTypes.number };
+Hello.defaultProps = { initialCount: 0 };
+
+export default Hello;
