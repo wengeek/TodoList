@@ -2,17 +2,33 @@ import React from 'react';
 import ClassNames from 'classnames';
 
 class AddItem extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      needShow: props.needShow
-    };
+
+  closePop() {
+    this.props.hidePop();
   }
 
-  handleClick() {
-    console.log('click');
-    this.props.needShow = false;
-    this.setState({needShow: false});
+  addItem(e) {
+    e.preventDefault();
+    var name = React.findDOMNode(this.refs.name).value.trim(),
+        desc = React.findDOMNode(this.refs.desc).value.trim();
+    
+    if (!name) {
+      alert('task name cannot be empty');
+      React.findDOMNode(this.refs.name).focus();
+      return;
+    }
+
+    if (!desc) {
+      alert('task description cannot be empty');
+      React.findDOMNode(this.refs.desc).focus();
+      return;
+    }
+
+    React.findDOMNode(this.refs.name).value = ''; 
+    React.findDOMNode(this.refs.desc).value = '';
+
+    this.props.addTask(name, desc);
+    this.props.hidePop();
   }
 
   render() {
@@ -26,10 +42,17 @@ class AddItem extends React.Component {
         <div className="add-input">
           <h3>Add Task</h3>
           <div className="form-group">
-            <label>Name</label>
-            <input type="text"/>
+            <label>name</label>
+            <input type="text" ref="name" />
           </div>
-
+          <div className="form-group">
+            <label>desc</label>
+            <textarea ref="desc"></textarea>
+          </div>
+          <div className="form-group">
+            <button onClick={this.addItem.bind(this)}>Submit</button>
+          </div>          
+          <span className="fa fa-close pop-cls" onClick={this.closePop.bind(this)}></span>
         </div>
       </div>
     );
