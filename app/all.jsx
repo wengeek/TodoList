@@ -3,20 +3,29 @@ import React from 'react/addons';
 var { CSSTransitionGroup } = React.addons;
 
 class All extends React.Component {
-
-  handleClick(index) {
-    console.log(this.props.tasks[index]);
-  }
-
   render() {
-    var tasks = this.props.tasks.map(function(task, index) {
-      return (
-        <li onClick={this.handleClick.bind(this, index)}>
-          <p className="task-name">{task.name}<span>{task.created}</span></p>
-          <p><i className="fa fa-circle unfinished"></i></p>
-        </li>
-      );
-    }.bind(this));
+
+    var tasks = this.props.tasks.map(function(task) {
+      var link = '#/task/' + task.id;
+      if (task.state === 0) {
+        return (
+          <li>
+            <p className="task-name">{task.name}<span>{task.created}</span></p>
+            <p><i className="fa fa-clock-o unfinished"></i></p>
+            <a href={link}></a>
+          </li>
+        );
+      } else {
+        return (
+          <li>
+            <p className="task-name">{task.name}<span>{task.created}</span></p>
+            <p><i className="fa fa-check-square-o finished"></i></p>
+            <a href={link}></a>
+          </li>
+        );        
+      }
+
+    });
 
     return (
       <div className="wrap tasks">
