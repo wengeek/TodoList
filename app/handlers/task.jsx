@@ -1,5 +1,8 @@
 import React from 'react';
 
+/**
+ * 单个任务处理句柄
+ */
 class Task extends React.Component {
   constructor(props) {
     super(props);

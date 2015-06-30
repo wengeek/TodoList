@@ -3,6 +3,9 @@ import {RouteHandler, Link } from 'react-router';
 import AddItem from '../components/additem.jsx';
 import Storage from '../lib/localstorage';
 
+/**
+ * 应用控制器，负责管理组件之间的状态
+ */
 class AppRoute extends React.Component {
   constructor() {
     super();

@@ -3,6 +3,9 @@ import {Link} from 'react-router';
 
 var { CSSTransitionGroup } = React.addons;
 
+/**
+ * 未完成任务处理句柄
+ */
 class UnCompleted extends React.Component {
   render() {
     var taskList = this.props.tasks.filter(function(task) {

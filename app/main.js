@@ -19,6 +19,9 @@ var routes = (
     </Route>
 );
 
+/**
+ * 应用入口
+ */
 Router.run(routes, function (Handler) {
   React.render(<Handler/>, document.getElementById('app'));
 });

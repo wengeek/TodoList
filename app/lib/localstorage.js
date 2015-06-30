@@ -1,3 +1,7 @@
+/**
+ * storage 用于存储数据
+ * @author 3w
+ */
 (function() {
   "use strict";
   

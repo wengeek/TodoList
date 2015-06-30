@@ -1,6 +1,9 @@
 import React from 'react';
 import ClassNames from 'classnames';
 
+/**
+ * 【添加任务】组件
+ */
 class AddItem extends React.Component {
 
   closePop() {
