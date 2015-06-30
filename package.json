@@ -14,15 +14,15 @@
     "babel-loader": "^5.1.4",
     "css-loader": "^0.15.1",
     "node-libs-browser": "^0.5.2",
+    "extract-text-webpack-plugin": "^0.8.2",
     "style-loader": "^0.12.3",
-    "webpack": "^1.9.11"
+    "url-loader": "^0.5.6"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
     "dev": "webpack-dev-server --devtool eval --progress --colors --hot --content-base build",
-    "deploy": "NODE_ENV=production webpack -p --config webpack.production.config.js"
+    "prod": "webpack -p --config webpack.production.config.js"
   },
-  "author": "",
+  "author": "wen",
   "license": "ISC"
 }
