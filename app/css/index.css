@@ -69,8 +69,8 @@
 .menu ul li a {
   display: block;
   width: 100%;
-  height: 40px;
-  line-height: 40px;
+  height: 50px;
+  line-height: 50px;
   font-size: 1.5rem;
   color: hsl(0, 0%, 67%);
   text-decoration: none;
@@ -82,7 +82,7 @@
 
 .wrap {
   margin-top: 50px;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
   overflow: hidden;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
@@ -272,9 +272,9 @@
 
 .tasks ul li p.task-name span:last-child {
   position: absolute;
-  right: 10px;
-  top: 8px;
-  font-size: .9rem;
+  right: 15px;
+  top: 10px;
+  font-size: .8rem;
   font-weight: normal;
   color: #999;
 }
@@ -361,7 +361,7 @@
 
 .single-task .task-state p span:last-child{
   font-size: 1.1rem;
-  color: #08AB80;
+  color: #34520F;
 }
 
 .single-task .task-over{

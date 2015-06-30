@@ -74,7 +74,7 @@ class AppRoute extends React.Component {
     return (
       <div>
         <header className="header">
-          <h2>ToDo</h2>
+          <h2>Todo</h2>
           <div className="fa fa-plus" onClick={this.handClick.bind(this)}></div>
         </header>
         <RouteHandler tasks={this.state.items} finishTask={this.finishTask.bind(this)}/>
@@ -83,7 +83,7 @@ class AppRoute extends React.Component {
           <ul>
             <li><Link to="all" className="fa fa-tasks"></Link></li>          
             <li><Link to="completed" className="fa fa-check-circle"></Link></li>
-            <li><Link to="uncompleted" className="fa fa-times-circle"></Link></li>
+            <li><Link to="uncompleted" className="fa fa-clock-o"></Link></li>
           </ul>
         </nav>
       </div>
