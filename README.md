@@ -1,8 +1,8 @@
 # TodoList by react & webpack 
 
-## Usage
-
 [Demo] http://lab.crazycoder.cc/todo
+
+## Usage
 
 First step: install the modules
 # npm install

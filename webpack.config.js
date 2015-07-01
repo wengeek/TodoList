@@ -14,8 +14,8 @@ module.exports = {
         test: /\.jsx?$/,
         loader: 'babel'
       },{
-        test: /\.css$/, // Only .css files
-        loader: 'style!css' // Run both loaders
+        test: /\.css$/,
+        loader: 'style!css'
       },
       {
         test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
