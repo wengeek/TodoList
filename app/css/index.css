@@ -249,10 +249,13 @@
 
 .tasks ul h2 {
   padding: 0 20px;
+  line-height: 1.5;
+  font-size: 1.3rem;
+  color: #ABABAB;
 }
 
 .tasks ul h2 i {
-  color: #08AB78;
+  color: #1C9B73;
 }
 
 .tasks ul li {
