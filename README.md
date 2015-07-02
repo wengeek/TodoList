@@ -7,7 +7,10 @@
 First step: install the modules
 # npm install
 
-Second step: You can run a webpack-server
+Second step: install webpack webpack-server
+# npm install -g webpack webpack-dev-server
+
+Third step: You can run a webpack-server
 # npm run dev
 
 If you want to combile the js and css files
