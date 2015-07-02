@@ -4,7 +4,7 @@ import {Link} from 'react-router';
 var { CSSTransitionGroup } = React.addons;
 
 /**
- * 完成任务处理句柄
+ *  show completed tasks 
  */
 class Completed extends React.Component {
 

@@ -2,12 +2,16 @@ import React from 'react';
 import ClassNames from 'classnames';
 
 /**
- * 【添加任务】组件
+ * '+' UIs 
  */
 class AddItem extends React.Component {
 
   closePop() {
     this.props.hidePop();
+  }
+
+  preventCls(event) {
+    event.stopPropagation();
   }
 
   addItem(e) {
@@ -41,8 +45,8 @@ class AddItem extends React.Component {
       });
 
     return (
-      <div className={classes}>
-        <div className="add-input">
+      <div className={classes} onClick={this.closePop.bind(this)}>
+        <div className="add-input" onClick={this.preventCls.bind(this)}>
           <h3>Add Task</h3>
           <div className="form-group">
             <label>name</label>

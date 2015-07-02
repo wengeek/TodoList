@@ -4,7 +4,7 @@ import {Link} from 'react-router';
 var { CSSTransitionGroup } = React.addons;
 
 /**
- * 全部任务列表处理句柄
+ *  Show all tasks 
  */
 class All extends React.Component {
   render() {

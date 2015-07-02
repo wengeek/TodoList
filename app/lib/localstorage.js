@@ -1,5 +1,6 @@
 /**
- * storage 用于存储数据
+ * storage 
+ * in order to saving data
  * @author 3w
  */
 (function() {

@@ -1,7 +1,7 @@
 import React from 'react';
 
 /**
- * 单个任务处理句柄
+ * show single task
  */
 class Task extends React.Component {
   constructor(props) {
