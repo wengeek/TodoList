@@ -14,7 +14,7 @@ class AppRoute extends React.Component {
   }
 
   componentDidMount() {
-    var items = this.storage.get('tasks') || [];
+    let items = this.storage.get('tasks') || [];
     this.setState({items: items});
   }
 
@@ -27,7 +27,7 @@ class AppRoute extends React.Component {
   }
 
   addTask(name, desc) {
-    var current = new Date(),
+    let current = new Date(),
       taskId = this.state.items[0] ? this.state.items[0].id + 1 : 1,
       created = (current.getMonth() + 1) + '月' + current.getDate() + '日 ' + current.getHours() + ':' + (current.getMinutes() < 10 ? '0' + current.getMinutes() : current.getMinutes()),
       item = {
@@ -45,7 +45,7 @@ class AppRoute extends React.Component {
   }
 
   finishTask(id, thought) {
-    var current = new Date(),
+    let current = new Date(),
       finished = (current.getMonth() + 1) + '月' + current.getDate() + '日 ' + current.getHours() + ':' + (current.getMinutes() < 10 ? '0' + current.getMinutes() : current.getMinutes()),
       task = null;
     
@@ -84,9 +84,9 @@ class AppRoute extends React.Component {
         <AddItem needShow={this.state.showAddPop} hidePop={this.hidePop.bind(this)} addTask={this.addTask.bind(this)}></AddItem>
         <nav className="menu">
           <ul>
-            <li><Link to="all" className="fa fa-tasks"></Link></li>          
-            <li><Link to="completed" className="fa fa-check-circle"></Link></li>
-            <li><Link to="uncompleted" className="fa fa-clock-o"></Link></li>
+            <li><Link to="tasks" className="fa fa-tasks"></Link></li>          
+            <li><Link to={`/tasks/completed`} className="fa fa-check-circle"></Link></li>
+            <li><Link to={`/tasks/uncompleted`} className="fa fa-clock-o"></Link></li>
           </ul>
         </nav>
       </div>

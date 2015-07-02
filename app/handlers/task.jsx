@@ -13,7 +13,7 @@ class Task extends React.Component {
   finishTask(e) {
     e.preventDefault();
 
-    var thought = React.findDOMNode(this.refs.thought).value.trim();
+    let thought = React.findDOMNode(this.refs.thought).value.trim();
     if (!thought) {
       alert('You need input your thought!');
       React.findDOMNode(this.refs.thought).focus();
@@ -23,7 +23,7 @@ class Task extends React.Component {
   }
 
   render() {
-    var task = null;
+    let task = null;
     this.props.tasks.forEach(function(val) {
       if (val.id === this.taskId) {
         task = val;
@@ -37,7 +37,7 @@ class Task extends React.Component {
       );
     }
 
-    if (task.state === 0) { /*未完成任务*/
+    if (task.state === 0) { /*uncompleted task*/
       return (
         <div className="wrap single-task">
           <div className="task-header">

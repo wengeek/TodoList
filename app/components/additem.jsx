@@ -16,7 +16,7 @@ class AddItem extends React.Component {
 
   addItem(e) {
     e.preventDefault();
-    var name = React.findDOMNode(this.refs.name).value.trim(),
+    let name = React.findDOMNode(this.refs.name).value.trim(),
         desc = React.findDOMNode(this.refs.desc).value.trim();
     
     if (!name) {
@@ -39,10 +39,10 @@ class AddItem extends React.Component {
   }
 
   render() {
-    var classes = ClassNames({
-        'addpop': true,
-        'show': this.props.needShow
-      });
+    let classes = ClassNames({
+      'addpop': true,
+      'show': this.props.needShow
+    });
 
     return (
       <div className={classes} onClick={this.closePop.bind(this)}>
