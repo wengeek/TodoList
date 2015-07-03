@@ -18,7 +18,7 @@ class AppRoute extends React.Component {
     this.setState({items: items});
   }
 
-  handClick() {
+  showPop() {
     this.setState({showAddPop: true});
   }
 
@@ -78,9 +78,9 @@ class AppRoute extends React.Component {
       <div>
         <header className="header">
           <h2>Todo</h2>
-          <div className="fa fa-plus" onClick={this.handClick.bind(this)}></div>
+          <div className="fa fa-plus" onClick={this.showPop.bind(this)}></div>
         </header>
-        <RouteHandler tasks={this.state.items} finishTask={this.finishTask.bind(this)}/>
+        <RouteHandler tasks={this.state.items} finishTask={this.finishTask.bind(this)} addTask={this.showPop.bind(this)}/>
         <AddItem needShow={this.state.showAddPop} hidePop={this.hidePop.bind(this)} addTask={this.addTask.bind(this)}></AddItem>
         <nav className="menu">
           <ul>

@@ -30,14 +30,24 @@ class Tasks extends React.Component {
     });
 
     if (tasks.length === 0) { //empty
-      tasks = (<h2>You have no tasks. You can <i className="fa fa-plus"></i> the task first!</h2>);
+      switch (type) {
+        case 0: 
+          tasks = (<h2 onClick={this.props.addTask}>You have no uncompleted tasks. You can <i className="fa fa-plus"></i> the task first!</h2>);
+          break;
+        case 1: 
+          tasks = (<h2 onClick={this.props.addTask}>You have no completed tasks. You can complete the task or <i className="fa fa-plus"></i> the task first!</h2>);
+          break;
+        default:
+           tasks = (<h2 onClick={this.props.addTask}>You have no tasks. You can <i className="fa fa-plus"></i> the task first!</h2>);
+          break;       
+      }
+    } else {
+      tasks = (<CSSTransitionGroup component="ul" transitionName="task">{tasks}</CSSTransitionGroup>);
     }
 
     return (
       <div className="wrap tasks">
-        <CSSTransitionGroup component="ul" transitionName="task">
-        {tasks}
-        </CSSTransitionGroup>
+      {tasks}
       </div>
     );
   }
