@@ -1,6 +1,6 @@
 # TodoList by react & webpack 
 
-[Demo] http://lab.crazycoder.cc/todos
+[Demo] http://lab.crazycoder.cc/todo
 
 ## Usage
 
