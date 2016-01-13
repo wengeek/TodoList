@@ -4,12 +4,16 @@ import AddItem from '../components/additem.jsx';
 import Storage from '../lib/localstorage';
 
 /**
- * router, to hold the state of UI 
+ * router, to hold the state of UI
  */
 class AppRoute extends React.Component {
   constructor() {
     super();
     this.state = {showAddPop: false, items: []};
+    this.addTask = this.addTask.bind(this);
+    this.finishTask = this.finishTask.bind(this);
+    this.showPop = this.showPop.bind(this);
+    this.hidePop = this.hidePop.bind(this);
     this.storage = Storage();
   }
 
@@ -48,13 +52,13 @@ class AppRoute extends React.Component {
     let current = new Date(),
       finished = (current.getMonth() + 1) + '月' + current.getDate() + '日 ' + current.getHours() + ':' + (current.getMinutes() < 10 ? '0' + current.getMinutes() : current.getMinutes()),
       task = null;
-    
+
     this.state.items.forEach(function(val) {
       if (val.id === id) {
         task = val;
       }
     });
-    
+
     if (!task) {
       return;
     }
@@ -70,7 +74,7 @@ class AppRoute extends React.Component {
     }.bind(this));
 
     this.setState({items: this.state.items});
-    this.storage.set('tasks', this.state.items);    
+    this.storage.set('tasks', this.state.items);
   }
 
   render() {
@@ -78,15 +82,19 @@ class AppRoute extends React.Component {
       <div>
         <header className="header">
           <h2>Todo</h2>
-          <div className="fa fa-plus" onClick={this.showPop.bind(this)}></div>
+          <div className="fa fa-plus" onClick={this.showPop}></div>
         </header>
-        <RouteHandler tasks={this.state.items} finishTask={this.finishTask.bind(this)} addTask={this.showPop.bind(this)}/>
-        <AddItem needShow={this.state.showAddPop} hidePop={this.hidePop.bind(this)} addTask={this.addTask.bind(this)}></AddItem>
+        {this.props.children && React.cloneElement(this.props.children, {
+          tasks: this.state.items,
+          finishTask: this.finishTask,
+          addTask: this.showPop
+        })}
+        <AddItem needShow={this.state.showAddPop} hidePop={this.hidePop} addTask={this.addTask}></AddItem>
         <nav className="menu">
           <ul>
-            <li><Link to="tasks" className="fa fa-tasks"></Link></li>          
-            <li><Link to={`/tasks/completed`} className="fa fa-check-circle"></Link></li>
-            <li><Link to={`/tasks/uncompleted`} className="fa fa-clock-o"></Link></li>
+            <li><Link to={`/tasks`} activeClassName="active" className={'fa fa-tasks ' + (this.props.location.pathname === '/' ? ' active' : '')}></Link></li>
+            <li><Link to={`/tasks/completed`} activeClassName="active" className="fa fa-check-circle"></Link></li>
+            <li><Link to={`/tasks/uncompleted`} activeClassName="active" className="fa fa-clock-o"></Link></li>
           </ul>
         </nav>
       </div>

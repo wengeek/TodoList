@@ -1,7 +1,6 @@
-import React from 'react/addons';
+import React from 'react';
 import Item from '../components/item.jsx';
-
-const {CSSTransitionGroup} = React.addons;
+import CSSTransitionGroup from 'react-addons-css-transition-group';
 
 /**
  *  Show all tasks 
@@ -25,7 +24,7 @@ class Tasks extends React.Component {
 
     let tasks = taskList.map(function(task) {
       return (
-        <Item task={task}/>
+        <Item task={task} key={task.name}/>
       );
     });
 
@@ -42,7 +41,7 @@ class Tasks extends React.Component {
           break;       
       }
     } else {
-      tasks = (<CSSTransitionGroup component="ul" transitionName="task">{tasks}</CSSTransitionGroup>);
+      tasks = (<CSSTransitionGroup component="ul" transitionName="task" transitionEnterTimeout={300} transitionLeaveTimeout={300}>{tasks}</CSSTransitionGroup>);
     }
 
     return (

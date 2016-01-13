@@ -6,6 +6,7 @@ import React from 'react';
 class Task extends React.Component {
   constructor(props) {
     super(props);
+    this.finishTask = this.finishTask.bind(this);
     this.taskId = parseInt(props.params.id, 10);
     this.state = {task: null};
   }
@@ -13,10 +14,10 @@ class Task extends React.Component {
   finishTask(e) {
     e.preventDefault();
 
-    let thought = React.findDOMNode(this.refs.thought).value.trim();
+    let thought = this.refs.thought.value.trim();
     if (!thought) {
       alert('You need input your thought!');
-      React.findDOMNode(this.refs.thought).focus();
+      this.refs.thought.focus();
       return;
     }
     this.props.finishTask(this.taskId, thought);
@@ -33,7 +34,7 @@ class Task extends React.Component {
       return (
         <div className="wrap">
           <h2>This task is not found.</h2>
-        </div>        
+        </div>
       );
     }
 
@@ -53,10 +54,10 @@ class Task extends React.Component {
           <div className="task-over">
             <label>Thought:</label>
             <textarea ref="thought"></textarea>
-            <button onClick={this.finishTask.bind(this)}>DONE</button>
+            <button onClick={this.finishTask}>DONE</button>
           </div>
         </div>
-      );      
+      );
     } else {
       return (
         <div className="wrap single-task">
