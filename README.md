@@ -2,6 +2,8 @@
 
 [Demo] http://lab.crazycoder.cc/todo
 
+> using React 0.14
+
 ## Usage
 
 First step: install the modules
